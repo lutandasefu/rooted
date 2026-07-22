@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooted — Daily Scripture Memorization</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<section id="view-landing" class="view view-landing active">
+  <div class="landing-inner">
+    <div class="logo-wrap">
+      <h1 class="logo" aria-label="Rooted">
+        <span style="--i:0">R</span><span style="--i:1">o</span><span style="--i:2">o</span><span style="--i:3">t</span><span style="--i:4">e</span><span style="--i:5">d</span>
+      </h1>
+      <div class="logo-underline"></div>
+    </div>
+    <p class="landing-tagline">grounded in the Word, one verse at a time</p>
+
+    <p class="landing-prayer">
+      Before we begin — a quiet moment.<br>
+      Lord, still my mind and open my heart to what You have for me today.<br>
+      Let this word take root, and let it grow.
+    </p>
+
+    <button id="btn-enter" class="btn btn-primary btn-enter">
+      <span>Begin</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<section id="view-dashboard" class="view">
+  <header class="topbar">
+    <span class="topbar-logo">Rooted</span>
+    <nav class="topbar-nav">
+      <button class="nav-link active" data-nav="dashboard">Dashboard</button>
+      <button class="nav-link" data-nav="library">Scripture</button>
+    </nav>
+  </header>
+
+  <div class="dashboard-inner">
+    <div class="dash-greeting">
+      <h2>Welcome back</h2>
+      <p class="muted">Every day rooted is a day grown. Here's where you stand.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-streak">0</div>
+        <div class="stat-label">Day streak</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-memorized">0</div>
+        <div class="stat-label">Verses memorized</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-books">0</div>
+        <div class="stat-label">Books touched</div>
+      </div>
+      <div class="stat-card stat-card-ring">
+        <svg viewBox="0 0 100 100" class="ring">
+          <circle cx="50" cy="50" r="42" class="ring-bg"/>
+          <circle cx="50" cy="50" r="42" class="ring-fg" id="ring-fg"/>
+        </svg>
+        <div class="ring-label">
+          <span id="ring-pct">0%</span>
+          <small>weekly goal</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-row">
+      <div class="panel timeline-panel">
+        <h3>This week</h3>
+        <div class="timeline" id="timeline"></div>
+      </div>
+      <div class="panel encourage-panel">
+        <h3>Why this matters</h3>
+        <p>"I have hidden your word in my heart that I might not sin against you." A verse held in memory is a verse ready the moment you need it — in temptation, in grief, in decision. This isn't collecting trivia. It's building a well you can draw from anywhere.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Continue where you left off</h3>
+      <div class="today-card" id="today-card"></div>
+    </div>
+
+    <div class="testament-section">
+      <h3>Explore Scripture</h3>
+      <div class="testament-grid">
+        <button class="testament-card ot" data-testament="OT">
+          <span class="testament-label">Old Testament</span>
+          <span class="testament-sub">Genesis — Malachi</span>
+        </button>
+        <button class="testament-card nt" data-testament="NT">
+          <span class="testament-label">New Testament</span>
+          <span class="testament-sub">Matthew — Revelation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK GRID ============ -->
+<section id="view-books" class="view">
+  <header class="topbar">
+    <button class="back-btn" data-back="dashboard">&larr; Dashboard</button>
+    <span class="topbar-logo" id="books-testament-title">Old Testament</span>
+    <span></span>
+  </header>
+  <div class="books-inner">
+    <div class="book-grid" id="book-grid"></div>
+  </div>
+</section>
+
+<!-- ============ VERSE FOCUS ============ -->
+<section id="view-verse" class="view">
+  <header class="topbar">
+    <button class="back-btn" data-back="books">&larr; Back</button>
+    <span class="topbar-logo" id="verse-book-title">Book</span>
+    <span></span>
+  </header>
+  <div class="verse-inner">
+    <div class="verse-card" id="verse-card"></div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
